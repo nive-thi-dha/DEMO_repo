@@ -7,14 +7,6 @@ CREATE OR REPLACE DATABASE EXTERNAL_DB;
 
 --changeset nivethidhas:2
 --liquibase tag:v1.2
-USE DATABASE EXTERNAL_DB;
-CREATE OR REPLACE SCHEMA Investor;
-
---rollback DROP SCHEMA Investor;
-
-
---changeset nivethidhas:3
---liquibase tag:v1.3
 USE SCHEMA Investor;
 CREATE OR REPLACE TABLE STG_CUSTOMER
 (
@@ -40,8 +32,8 @@ C_LAST_REVIEW_DATE VARCHAR(10)
 
 --rollback DROP TABLE STG_CUSTOMER;
 
---changeset nivethidhas:4
---liquibase tag:v1.4
+--changeset nivethidhas:3
+--liquibase tag:v1.3
 INSERT INTO STG_CUSTOMER (SELECT * FROM SNOWFLAKE_SAMPLE_DATA.TPCDS_SF100TCL.CUSTOMER LIMIT 100);
 
 --rollback DELETE FROM STG_CUSTOMER;
