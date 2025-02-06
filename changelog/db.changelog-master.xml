@@ -4,7 +4,6 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
     http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.4.xsd">
-    <include file="change/STAGE/create_table_stg_client.sql" relativeToChangelogFile="true"/>
-     <include file="change/EDW/create_table_dim_client.sql" relativeToChangelogFile="true"/>
+    <include file="change/STAGE/create.sql" relativeToChangelogFile="true"/>
  
 </databaseChangeLog>
