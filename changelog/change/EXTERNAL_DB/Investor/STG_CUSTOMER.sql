@@ -1,19 +1,21 @@
 --liquibase formatted sql
 --changeset nivethidhas:1
 --liquibase tag:v1.1
-CREATE DATABASE EXTERNAL_DB;
+CREATE OR REPLACE DATABASE EXTERNAL_DB;
 
 --rollback DROP DATABASE EXTERNAL_DB;
 
 --changeset nivethidhas:2
 --liquibase tag:v1.2
-CREATE SCHEMA Investor;
+USE DATABASE EXTERNAL_DB;
+CREATE OR REPLACE SCHEMA Investor;
 
 --rollback DROP SCHEMA Investor;
 
 
 --changeset nivethidhas:3
 --liquibase tag:v1.3
+USE SCHEMA Investor;
 CREATE OR REPLACE TABLE STG_CUSTOMER
 (
 C_CUSTOMER_SK NUMBER(38,0),
